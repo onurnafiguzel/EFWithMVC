@@ -14,6 +14,6 @@ namespace Entities.Concrete
         public string SchoolId { get; set; }
 
         //Navigation Property
-        public ICollection<Lesson> Lessons { get; set; }
+        public ICollection<StudentLesson> Lessons { get; set; } = new HashSet<StudentLesson>();
     }
 }

@@ -12,6 +12,6 @@ namespace Entities.Concrete
         public string Name { get; set; }
 
         //Navigation Property
-        public ICollection<Lesson> Lessons { get; set; }
+        public List<Lesson> Lessons { get; set; }
     }
 }

@@ -11,13 +11,13 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public string Name { get; set; }
 
-        //Navigation Property
-        public ICollection<Student> Students { get; set; }
-
-        public int ClassroomId { get; set; }
+        //Navigation Property      
+        public int? ClassroomId { get; set; }
         public Classroom Classroom { get; set; }
 
-        public int TeacherId { get; set; }
+        public int? TeacherId { get; set; }
         public Teacher Teacher { get; set; }
+
+        public ICollection<StudentLesson> Students { get; set; } = new HashSet<StudentLesson>();
     }
 }

@@ -13,6 +13,6 @@ namespace Entities.Concrete
         public string LastName { get; set; }
 
         //Navigation Property
-        public ICollection<Lesson> Lessons { get; set; }
+        public List<Lesson> Lessons { get; set; }
     }
 }
