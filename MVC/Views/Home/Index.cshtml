@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Classroom>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +8,8 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<a asp-action="Classroom" asp-controller="Home" class="btn btn-primary">Sınıflara git</a>
+<a asp-action="Lessons" asp-controller="Home" class="btn btn-primary">Derslere Git</a>
+<a asp-action="Students" asp-controller="Home" class="btn btn-primary">Öğrencilere git</a>
+<a asp-action="Teachers" asp-controller="Home" class="btn btn-primary">Öğretmenlere git</a>

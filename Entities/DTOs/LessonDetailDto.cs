@@ -1,18 +1,17 @@
-﻿using Entities.Abstract;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Concrete
+namespace Entities.DTOs
 {
-    public class Classroom : IEntity
+    public class LessonDetailDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string TeacherName { get; set; }
+        public string ClassroomName { get; set; }
 
-        //Navigation Property
-        public List<Lesson> Lessons { get; set; }
     }
 }

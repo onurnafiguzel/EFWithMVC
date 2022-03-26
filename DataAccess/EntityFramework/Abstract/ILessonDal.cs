@@ -6,14 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Abstract
+namespace DataAccess.EntityFramework.Abstract
 {
-    public interface ILessonService
+    public interface ILessonDal : IEntityRepository<Lesson>
     {
-        public void Add(Lesson lesson);
-        public void Update(Lesson lesson);
-        public void Delete(Lesson lesson);
-        public List<Lesson> GetAll();
         public List<LessonDetailDto> GetLessonDetails();
     }
 }

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Classroom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Classroom</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td>@item.Name</td>
+            </tr>
+
+        }
+    </tbody>
+</table>

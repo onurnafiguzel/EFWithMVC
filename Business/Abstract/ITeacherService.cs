@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface ITeacherSerrvice
+    public interface ITeacherService
     {
         public void Add(Teacher teacher);
-        public void Update(int id);
-        public void Delete(int id);
+        public void Update(Teacher teacher);
+        public void Delete(Teacher teacher);
         public List<Teacher> GetAll();
     }
 }

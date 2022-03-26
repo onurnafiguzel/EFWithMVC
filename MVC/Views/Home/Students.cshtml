@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Student>
+@{
+    ViewData["Title"] = "Students";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Students</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">SchoolId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.SchoolId</td>
+            </tr>
+
+        }
+    </tbody>
+</table>

@@ -1,3 +1,7 @@
+using Business.Abstract;
+using Business.Concrete;
+using DataAccess.EntityFramework.Abstract;
+using DataAccess.EntityFramework.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +28,14 @@ namespace MVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddTransient<IStudentService, StudentManager>();
+            services.AddTransient<ILessonService, LessonManager>();
+            services.AddTransient<IClassroomService, ClassroomManager>();
+            services.AddTransient<ITeacherService, TeacherManager>();
+            services.AddTransient<IClassroomDal, EfClassroomDal>();
+            services.AddTransient<ILessonDal, EfLessonDal>();
+            services.AddTransient<IStudentDal, EfStudentDal>();
+            services.AddTransient<ITeacherDal, EfTeacherDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

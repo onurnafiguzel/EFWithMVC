@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business.Abstract;
+using Entities.Concrete;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MVC.Models;
 using System;
@@ -12,15 +14,43 @@ namespace MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IClassroomService _classroomService;
+        private readonly IStudentService _studentService;
+        private readonly ILessonService _lessonService;
+        private readonly ITeacherService _teacherService;
+        public HomeController(ILogger<HomeController> logger, IClassroomService classroomService = null, IStudentService studentService = null, ILessonService lessonService = null, ITeacherService teacherService = null)
         {
             _logger = logger;
+            _classroomService = classroomService;
+            _studentService = studentService;
+            _lessonService = lessonService;
+            _teacherService = teacherService;
         }
 
         public IActionResult Index()
         {
             return View();
+        }
+        public IActionResult Classroom()
+        {
+            var classrooms = _classroomService.GetAll();
+            return View(classrooms);
+        }       
+
+        public IActionResult Students()
+        {
+            var students = _studentService.GetAll();
+            return View(students);
+        }
+        public IActionResult Lessons()
+        {
+            var lessons = _lessonService.GetLessonDetails();
+            return View(lessons);
+        }
+        public IActionResult Teachers()
+        {
+            var teachers = _teacherService.GetAll();
+            return View(teachers);
         }
 
         public IActionResult Privacy()

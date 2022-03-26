@@ -10,8 +10,8 @@ namespace Business.Abstract
     public interface IStudentService
     {
         public void Add(Student student);
-        public void Update(int id);
-        public void Delete(int id);
+        public void Update(Student student);
+        public void Delete(Student student);
         public List<Student> GetAll();
     }
 }
